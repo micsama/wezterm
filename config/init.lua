@@ -29,5 +29,9 @@ function Config:append(new_options)
    end
    return self
 end
+local platform = require('utils.platform')()
+if platform.is_linux then
+  Config.enable_wayland = true
+end
 
 return Config
